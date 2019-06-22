@@ -5,8 +5,17 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.MainActivity" android:background="@drawable/background">
+        tools:context=".activities.MainActivity"
 
+    >
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_leyesMainAct"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+<!--
     <fragment
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="392dp"
@@ -14,5 +23,5 @@
             android:id="@+id/fragment" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"/>
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

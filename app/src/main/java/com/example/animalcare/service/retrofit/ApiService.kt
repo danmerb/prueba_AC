@@ -16,7 +16,7 @@ const val ANIMAL_CARE_API_BASE_URI = "https://animal-care.herokuapp.com/"
 interface ApiService {
 
     @GET("/ley/")
-    fun getleyes():  Deferred<Response<LiveData<List<ley_entity>>>>
+    fun getleyes():  Deferred<Response<List<ley_entity>>>
 
 
     @GET("/ley/{articulo}")
