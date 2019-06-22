@@ -18,7 +18,8 @@ import kotlinx.coroutines.launch
 class ViewModelRoom(context: Application): AndroidViewModel(context){
     private val leyRepository: LeyRepository
     var allLaws: LiveData<List<ley_entity>>
-    val listaLeyes: MutableLiveData<MutableList<ley_entity>> = MutableLiveData(emptyList<ley_entity>().toMutableList())
+    val listaLeyes = MutableLiveData<MutableList<ley_entity>>()
+
     init {
         val leyDao = RoomDB.getInstance( context,viewModelScope).leyDao()
         //val orgDao= RoomDB.getInstance(context).orgDao()
@@ -42,7 +43,7 @@ class ViewModelRoom(context: Application): AndroidViewModel(context){
         val response = leyRepository.retrieveLeyes().await()
         if(response.isSuccessful){
             if(response.code()==200){
-                listaLeyes.postValue(response.body()?.toMutableList()?:arrayListOf(MoviePreview(Title = "Dummy 1"))
+                listaLeyes.postValue(response.body()?.toMutableList()?:arrayListOf(ley_entity("idDef", "aparDef", "artiDef")))
             }
         }
     }

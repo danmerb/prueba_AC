@@ -30,7 +30,7 @@ class LeyRepository(private val leyDao: ley_dao) {
         return ApiService.getAnimalService().getleye(ley)
     }
 
-    fun retrieveLeyes(): Deferred<Response<LiveData<List<ley_entity>>>> {
+    fun retrieveLeyes(): Deferred<Response<List<ley_entity>>> {
         return ApiService.getAnimalService().getleyes()
     }
 }
